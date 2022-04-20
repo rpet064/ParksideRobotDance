@@ -25,11 +25,16 @@ export default function App() {
         </Container>
       </Navbar>
       {/* middle screen components */}
-      <Title />
       {!competition && (
-        <Button className="btn-lg" onClick={() => setCompetiton(true)}>
-          Begin Battle
-        </Button>
+        <div>
+          <Title
+            bigTitle="Welcome to PS Robot Dance Battle"
+            notBigTitle="Click the button to begin"
+          />
+          <Button className="btn-lg" onClick={() => setCompetiton(true)}>
+            Begin Battle
+          </Button>
+        </div>
       )}
       {competition && <Competition />}
       {/* footer component */}

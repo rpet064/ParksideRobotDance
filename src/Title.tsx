@@ -1,8 +1,8 @@
-export default function Title() {
+export default function Title(props: any) {
   return (
     <div>
-      <h1 className="big-header">Welcome to Parkside Robot Dance Battle</h1>
-      <h2 className="mid-header">Click on the button to begin!</h2>
+      <h1 className="big-header">{props.bigTitle}</h1>
+      <h2 className="mid-header">{props.notBigTitle}</h2>
     </div>
   );
 }
