@@ -1,9 +1,13 @@
+import ChooseNames from "./ChooseNames";
 import "../public/styles.css";
 import Footer from "./Footer";
 import React, { useState } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import Title from "./Title";
-import Competition from "./Competition";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouseUser, faAddressCard } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
+library.add(faHouseUser, faAddressCard);
 
 export default function App() {
   // button toggle start competiton
@@ -13,13 +17,18 @@ export default function App() {
       {/* navbar component */}
       <Navbar className="nav" expand="lg">
         <Container>
-          <Button href="#home">React-Bootstrap</Button>
+          <Button type="button" onClick={() => setCompetiton(false)}>
+            PSRB
+          </Button>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto" activeKey="/home">
-              <Button>Home</Button>
-              <Button>Link</Button>
-              <Button href="#about">About</Button>
+              <Button type="button" onClick={() => setCompetiton(false)}>
+                <FontAwesomeIcon icon={["fas", "house-user"]} />
+              </Button>
+              <Button type="button" href="#about">
+                <FontAwesomeIcon icon={["fas", "address-card"]} />
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -36,7 +45,7 @@ export default function App() {
           </Button>
         </div>
       )}
-      {competition && <Competition />}
+      {competition && <ChooseNames />}
       {/* footer component */}
       <Footer />
     </div>
