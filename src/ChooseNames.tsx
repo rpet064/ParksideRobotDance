@@ -3,39 +3,62 @@ import { Button } from "react-bootstrap";
 import Title from "./Title";
 import SelectRobot from "./SelectRobot";
 
+// catch teamname input values
+const teamNames = {
+  teamName1: "",
+  teamName2: ""
+};
+
 export default function ChooseNames() {
   const [teams, chooseTeams] = useState(false);
 
-  function catchTeamNames(event: any){
-    const teamNames = event.target.value;
-     console.log(teamNames);
+  const [values, setValues] = useState(teamNames);
 
-  }
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    });
+  };
 
   return !teams ? (
     <div>
       <Title bigTitle="Who's Competing Today?" />
-      <form onSubmit="event.preventDefault()">
+      <form
+        onSubmit={(event) => {
+          chooseTeams(true);
+          event.preventDefault();
+        }}
+      >
         <div>
           <h3> Team One </h3>
-          <input type="text" name="nameOne" placeholder="CatBots" onSubmit={catchTeamNames}/>
+          <input
+            type="text"
+            name="teamName1"
+            placeholder="CatBots"
+            onChange={handleInputChange}
+            value={values.teamName1}
+          />
         </div>
         <div>
           <h3> Team Two </h3>
-          <input type="text" name="nameTwo" placeholder="DogBots" onSubmit={catchTeamNames} />
+          <input
+            type="text"
+            name="teamName2"
+            placeholder="DogBots"
+            onChange={handleInputChange}
+            value={values.teamName2}
+          />
         </div>
-        <Button
-          className="form-button"
-          type="submit"
-          onClick={() => chooseTeams(true)}
-        >
+        <Button className="form-button" type="submit">
           Submit
         </Button>
       </form>
     </div>
   ) : (
     <div>
-      <SelectRobot />
+      <SelectRobot {...teamNames} />
     </div>
   );
 }
