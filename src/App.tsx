@@ -1,9 +1,10 @@
+import React, { useState } from "react";
 import ChooseNames from "./ChooseNames";
+import Title from "./Title";
 import "../public/styles.css";
 import Footer from "./Footer";
-import React, { useState } from "react";
+import RobotImage from "./RobotImage";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import Title from "./Title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouseUser, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -12,6 +13,7 @@ library.add(faHouseUser, faAddressCard);
 export default function App() {
   // button toggle start competiton
   const [competition, setCompetiton] = useState(false);
+
   return (
     <div className="App">
       {/* navbar component */}
@@ -43,6 +45,10 @@ export default function App() {
           <Button className="btn-lg" onClick={() => setCompetiton(true)}>
             Begin Battle
           </Button>
+          <div>
+            <RobotImage />
+            <RobotImage />
+          </div>
         </div>
       )}
       {competition && <ChooseNames />}

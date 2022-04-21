@@ -4,6 +4,7 @@ import Title from "./Title";
 import RobotBattle from "./RobotBattle";
 
 export default function SelectRobot() {
+  // user confirm start of battle
   const [battle, beginBattle] = useState(false);
 
   return !battle ? (
