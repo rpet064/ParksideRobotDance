@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 app.use('/', express.static(path.join(__dirname, 'testheroku')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'));
 });
 
 server.listen(port, () => {
