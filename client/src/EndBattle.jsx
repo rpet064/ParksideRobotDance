@@ -19,7 +19,7 @@ export default function EndBattle(props){
             </div>
             <Button title='See the Historic Leaderboard' onClick={() => setEndBattle(false)}>Robot Leaderboard</Button>
             <Button title="About this app" id="address-card" type="button" >
-                <a href="https://challenge.parkside-interactive.com/docs/"></a>
+                <a href="https://challenge.parkside-interactive.com/docs/">About</a>
             </Button>
         </div>
         ):(
