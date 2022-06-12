@@ -1,21 +1,16 @@
-const express = require('express'); //Line 1
-const app = express(); //Line 2
-const port = process.env.PORT || 5000; //Line 3
+'use strict';
 
-// This displays message that the server running and listening to specified port
-app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
+const path = require('path');
+const express = require('express');
+const http = require('http');
 
-// create a GET route
-app.get('/express_backend', (req, res) => { //Line 9
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
-}); //Line 11
+const app = express();
+const server = http.Server(app);
 
-app.get('/data', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(
-    JSON.stringify({
-      firstName: "John",
-      lastName: "Doe"
-    })
-  ); 
+const port = process.env.PORT || 8080;
+
+app.use('/', express.static(path.join(__dirname, 'testheroku')));
+
+server.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}/`);
 });
