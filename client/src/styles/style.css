@@ -267,6 +267,10 @@ span {
   bottom: 2rem;
 }
 
+.endbattle-container a{
+  color: white;
+}
+
 /* footer */
 
 footer {
