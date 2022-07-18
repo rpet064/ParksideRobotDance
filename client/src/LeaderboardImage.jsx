@@ -13,7 +13,7 @@ export default function LeaderboardImage(props) {
         )))
     }
     return (
-            <div key={props.key} className="robot-image">
+            <div key={props.key} id="robot-image">
                 <div>
                <img src={props.RobotApi.avatar + '?size=160x160'} alt='' />
                <p>{props.RobotApi.name}</p>

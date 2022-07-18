@@ -21,7 +21,7 @@ export default function ChooseNames() {
   };
 
   return !teams ? (
-    <div className='choose-teamnames'>
+    <div className='team-names-form'>
       <h1> Who's Competiting Today? </h1>
       <form
         onSubmit={(event) => {
@@ -65,3 +65,4 @@ export default function ChooseNames() {
     </div>
   );
 }
+  

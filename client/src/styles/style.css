@@ -81,17 +81,11 @@ span {
 
 /* homepage */
 
-.homepage{
-  height: 150%;
-  width: 150%;
-}
-
 #homepage-right, #homepage-middle, #homepage-left{
   padding: 2%;
-  width: 30%;
+  width: 33%;
   height: 100%;
   display:inline-block;
-  position: relative;
 }
 
 #homepage-right p, #homepage-left p{
@@ -107,29 +101,42 @@ span {
   margin-top: 40%;
 }
 
-/* homepage responsive */
+/* homepage mobile responsive */
+
+@media only screen and (max-width: 750px) {
+.homepage {
+  padding-left: 10%;
+  }
+}
 
 @media only screen and (max-width: 750px) {
   #homepage-right, #homepage-middle, #homepage-left{
     display: block;
-    width: 70%;
+    width: 90%;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1300px) {
   .homepage-button{
-    margin-top: 10%;
+    margin-top: 6%;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1300px) {
+  #homepage-right{
+    padding-bottom: 8%;
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
   #homepage-left{
     margin-top: 2%;
   }
 }
 
 
-/* Choose Names */
+/* Choose Names Component */
 
 .form-button {
   margin: 0.5% 0 0 2%;
@@ -140,6 +147,36 @@ span {
 
 .choose-teamnames {
   padding-top: 3%;
+}
+
+/* Choose Names mobile responsive */
+
+
+@media only screen and (max-width: 750px) {
+  .form-button{
+    padding: 4% 8%;
+    margin: 2%;
+    left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  form{
+    font-size:16pt;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .choose-teamnames{
+    padding-left: 7%;
+    padding-top: 9%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .choose-teamnames h1{
+    font-size: 26pt;
+  }
 }
 
 /* Select Robots */
@@ -159,12 +196,18 @@ span {
 #select-robots-button{
   top: 10px;
   margin: 2% 0.5% 8% 2%;
-
 }
 
 .robot-image{
   display:inline-block;
-  padding: -0.5%;
+}
+
+/* Select Robots mobile responsive*/
+
+@media only screen and (max-width: 750px) {
+  #select-robots-button{
+    margin-bottom: 15%;
+  }
 }
 
 /* Robots Battle */
@@ -179,18 +222,40 @@ span {
 
 #robot-battle-button{
   position: relative;
-  top: 5rem;
+  top: 3rem;
 }
 
+/* robot battle mobile responsive */
+
 @media only screen and (max-width: 850px) {
-  .battle-container{
+  #battle-middle, #battle-left, #battle-right, .battle-container{
     display: block;
   }
 }
 
 @media only screen and (max-width: 850px) {
-  #battle-middle, #battle-left, #battle-right{
-    display: block;
+  #battle-left, #battle-right{
+    padding-right: 7%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #battle-left{
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .battle-container h3{
+    font-size: 22pt;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #battle-left{
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
   }
 }
 
@@ -210,6 +275,20 @@ span {
 .endbattle-header {
   display: inline-block;
   padding: 2% 3% 1% 3%;
+}
+
+/* end battle mobile responsive */
+
+@media only screen and (max-width: 1000px) {
+.endbattle-container h2 {
+    padding-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+.endbattle-container button {
+    margin-bottom: 12%;
+  }
 }
 
 /* scoreboard */
@@ -235,12 +314,40 @@ span {
   padding-bottom: 5%;
 }
 
-@media only screen and (max-width: 850px) {
+/* leaderboard mobile responsive */
+
+@media only screen and (max-width: 950px) {
+  #leaderboard p{
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
   #leaderboard p{
     font-size: 0.75rem;
   }
 }
 
+@media only screen and (max-width: 950px) {
+  #robot-image img{
+      position: relative;
+      right: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    #robot-image img{
+        position: relative;
+        right: 1rem;
+      }
+    }
+
+    @media only screen and (max-width: 650px) {
+      #robot-image img{
+          position: relative;
+          right: 2rem;
+        }
+      }
 /* leaderboard-image */
 
 .fa-star{
@@ -292,4 +399,18 @@ footer {
 
 .footer-icon:hover{
   color: #3a14e8;
+}
+
+/* footer mobile responsive*/
+
+@media only screen and (max-width: 1200px) {
+  footer {
+    padding-bottom: 5%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  footer {
+    padding-bottom: 9%;
+  }
 }
