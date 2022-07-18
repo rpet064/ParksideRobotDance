@@ -1,0 +1,416 @@
+@import "bootstrap/dist/css/bootstrap.css";
+
+.App {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #fcf8e8;
+  background-image: url("https://www.transparenttextures.com/patterns/tex2res5.png");
+  text-align:center;
+}
+
+input {
+  padding: 0.5%;
+  margin-bottom: 1%;
+}
+
+img{
+  padding-bottom: 0.5%;
+  display:inline-block;
+}
+
+h2, h3, h4, h5, h6, h7{
+  padding-top: 0.5%;
+}
+
+h1{
+  padding-top: 2%;
+}
+
+form {
+  position: relative;
+  right: 1rem;
+}
+
+span {
+  display: inline-block;
+}
+
+/* General Components */
+
+.big-header {
+  padding: 5%;
+}
+
+/* navbar */
+
+.nav {
+  background-color: #ffb72b;
+  margin: auto -16px;
+  padding: 16px 32px;
+  font-family: "Fira Sans Condensed", sans-serif;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.btn-group a{
+  color: white;
+}
+
+.btn {
+  background-color: #e83a14;
+  border:0;
+  margin-right: 8%;
+}
+
+#address-card{
+  position: relative;
+  background-color: #e83a14;
+}
+
+/* mainscreen */
+
+.big-header {
+  padding-top: 3.5%;
+  white-space: nowrap;
+}
+
+/* homepage */
+
+#homepage-right, #homepage-middle, #homepage-left{
+  padding: 2%;
+  width: 33%;
+  height: 100%;
+  display:inline-block;
+}
+
+#homepage-right p, #homepage-left p{
+  padding-top: 2rem;
+}
+
+.btn-lg {
+  height: 100px;
+  width: 200px;
+}
+
+.homepage-button{
+  margin-top: 40%;
+}
+
+/* homepage mobile responsive */
+
+@media only screen and (max-width: 750px) {
+.homepage {
+  padding-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #homepage-right, #homepage-middle, #homepage-left{
+    display: block;
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .homepage-button{
+    margin-top: 6%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #homepage-right{
+    padding-bottom: 8%;
+    padding-right: 10%;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #homepage-left{
+    margin-top: 2%;
+  }
+}
+
+
+/* Choose Names Component */
+
+.form-button {
+  margin: 0.5% 0 0 2%;
+  position: relative;
+  padding: 1% 2%;
+  right: 1rem;
+}
+
+.choose-teamnames {
+  padding-top: 3%;
+}
+
+/* Choose Names mobile responsive */
+
+
+@media only screen and (max-width: 750px) {
+  .form-button{
+    padding: 4% 8%;
+    margin: 2%;
+    left: 0rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  form{
+    font-size:16pt;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .choose-teamnames{
+    padding-left: 7%;
+    padding-top: 9%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .choose-teamnames h1{
+    font-size: 26pt;
+  }
+}
+
+/* Select Robots */
+
+.select-robots-container{
+  margin: 0 auto;
+}
+
+.select-robots-container img{
+  width: 7rem;
+  height: 7rem;
+}
+#select-robots-top-container, #select-robots-middle-container, #select-robots-bottom-container{
+  position: relative;
+}
+
+#select-robots-button{
+  top: 10px;
+  margin: 2% 0.5% 8% 2%;
+}
+
+.robot-image{
+  display:inline-block;
+}
+
+/* Select Robots mobile responsive*/
+
+@media only screen and (max-width: 750px) {
+  #select-robots-button{
+    margin-bottom: 15%;
+  }
+}
+
+/* Robots Battle */
+
+.battle-container{
+  justify-content: center;
+  width: 100%;
+  gap: 100px;
+  padding-top: 2%;
+  display: flex;
+}
+
+#robot-battle-button{
+  position: relative;
+  top: 3rem;
+}
+
+/* robot battle mobile responsive */
+
+@media only screen and (max-width: 850px) {
+  #battle-middle, #battle-left, #battle-right, .battle-container{
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #battle-left, #battle-right{
+    padding-right: 7%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #battle-left{
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .battle-container h3{
+    font-size: 22pt;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  #battle-left{
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* EndBattle */
+
+.endbattle-container {
+  justify-content: right;
+  display: flex-inline;
+}
+
+.endbattle-container button{
+  margin: 1.5% 1.5% 5% 1.5%;
+  min-width: 9rem;
+  height: 4rem;
+}
+
+.endbattle-header {
+  display: inline-block;
+  padding: 2% 3% 1% 3%;
+}
+
+/* end battle mobile responsive */
+
+@media only screen and (max-width: 1000px) {
+.endbattle-container h2 {
+    padding-top: 5%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+.endbattle-container button {
+    margin-bottom: 12%;
+  }
+}
+
+/* scoreboard */
+
+.scoreboard-container {
+  padding: 0%;
+  display: block;
+}
+
+.scoreboard-right, .scoreboard-left {
+  display: inline-block;
+  padding: 2%;
+}
+
+/* leaderboard */
+
+#leaderboard h1 {
+  padding-top: 2%;
+  padding-bottom: 1%;
+}
+
+#leaderboard img {
+  padding-bottom: 5%;
+}
+
+/* leaderboard mobile responsive */
+
+@media only screen and (max-width: 950px) {
+  #leaderboard p{
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  #leaderboard p{
+    font-size: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  #robot-image img{
+      position: relative;
+      right: 0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    #robot-image img{
+        position: relative;
+        right: 1rem;
+      }
+    }
+
+    @media only screen and (max-width: 650px) {
+      #robot-image img{
+          position: relative;
+          right: 2rem;
+        }
+      }
+/* leaderboard-image */
+
+.fa-star{
+  color: gold;
+  font-size: 0.75rem;
+  position: relative;
+  bottom: 2rem;
+}
+
+.fa-crown{
+  color: gold;
+  filter: drop-shadow(0px 0px 2px gold);
+  font-size: 2rem;
+  position: relative;
+  bottom: 2rem;
+}
+.powermove-p{
+  position: relative;
+  bottom: 1rem;
+}
+
+.wins-p{
+  position: relative;
+  bottom: 2rem;
+}
+
+.endbattle-container a{
+  color: white;
+}
+
+/* footer */
+
+footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #ffb72b;
+  color: white;
+  font-family: "Fira Sans Condensed", sans-serif;
+  padding: 0.5% 0 3.75% 0;
+}
+
+.footer-icon {
+  margin-right: 1%;
+  color: #e83a14;
+}
+
+.footer-icon:hover{
+  color: #3a14e8;
+}
+
+/* footer mobile responsive*/
+
+@media only screen and (max-width: 1200px) {
+  footer {
+    padding-bottom: 5%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  footer {
+    padding-bottom: 9%;
+  }
+}
