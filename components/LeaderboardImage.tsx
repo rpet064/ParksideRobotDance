@@ -5,8 +5,8 @@ library.add(faStar, faCrown);
 
 
 
-export default function LeaderboardImage(props) {
-    function StarGenerator(numStars, className_){
+export default function LeaderboardImage(props:any) {
+    function StarGenerator(numStars:any, className_:any){
         return(
         [...Array(numStars)].map((index) => (
                <FontAwesomeIcon className={className_} icon={["fas", "star"]} key={index} />

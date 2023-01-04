@@ -11,7 +11,7 @@ export default function ChooseNames() {
     teamTwoName: ""
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const { name, value } = e.target;
     setValues({
       ...values,

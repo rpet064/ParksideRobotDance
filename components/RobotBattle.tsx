@@ -5,7 +5,7 @@ import Scoreboard from "./Scoreboard";
 import EndBattle from "./EndBattle";
 import SendPost from "./SendPost";
 
-export default function RobotBattle(props) {
+export default function RobotBattle(props:any) {
   // team 1 & 2 index
   const [teamOneIndex, setTeamOneIndex] = useState(0);
   const [teamTwoIndex, seTeamTwoIndex] = useState(5);

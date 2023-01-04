@@ -1,4 +1,4 @@
-export default function Scoreboard(props){
+export default function Scoreboard(props:any){
     return(
         <div>
             <div className="scoreboard-left">
