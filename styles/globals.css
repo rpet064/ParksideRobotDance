@@ -16,8 +16,6 @@ a {
   text-decoration: none;
 }
 
-@import "bootstrap/dist/css/bootstrap.css";
-
 .App {
   font-family: "Roboto", sans-serif;
   text-align: center;
