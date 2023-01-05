@@ -7,10 +7,26 @@ import "swiper/css/pagination";
 import LeaderboardImage from './LeaderboardImage';
 
 export default function Leaderboard(){
+
+  const [domLoaded, setDomLoaded] = useState(false);
+  
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
   // control fetch of historical data of battles
-   const [robotData, setRobotData] = useState([]);
-   //  indv robot data (image, name etc.)
-   const [robotAPI, setRobotApi] = useState([]);
+  const [robotData, setRobotData] = useState([{"winner": String, "occurrence": Number}]);
+  
+  //  indv robot data (image, name etc.)
+  const [robotAPI, setRobotApi] = useState([[{
+    "id": Number,
+    "name": String,
+    "powermove": String,
+    "experience": Number,
+    "outOfOrder": Boolean,
+    "avatar": String
+}]]);
+  
   //  controls carousel/skeleton state
   const [loading, setLoading] = useState(true)
 
@@ -18,35 +34,50 @@ export default function Leaderboard(){
     const danceOffApi = axios.create({
         baseURL: 'https://challenge.parkside-interactive.com/api/danceoffs/'
       });
-  // fetch robot json data array individually
+  
+      // fetch robot json data array individually
     useEffect(() => {
-      const arr2 = []
-      let key = "winner"
+      let robotWins: Array<any> = [{
+          "id": Number,
+          "name": String,
+          "powermove": String,
+          "experience": Number,
+          "outOfOrder": Boolean,
+          "avatar": String
+}]
+      
       // fetch prev danceoff data
         danceOffApi.get('?_limit=10').then((response) => {
           const robotJSON = response.data
+          
           // count total occurences each robot's wins
-          robotJSON.forEach((x)=>{
-            if(arr2.some((val)=>{ return val[key] === x[key] })){
-              arr2.forEach((k)=>{
-               if(k[key] === x[key]){
+          robotJSON.forEach((robot: any)=>{
+            if(robotWins.some((val)=>{ return val["winner"] === robot["winner"] })){
+              robotWins.forEach((k)=>{
+               if(k["winner"] === robot["winner"]){
                   k["occurrence"]++
                }
+               console.log(robotJSON)
              })
-          //  if only one occurance
+          
+             //  if robot only has one win - add to robotOnlyOneWin object, assign robot's name
+            //  and set occurrence to one - then push into main array of robots
            } else {
-             let a = {}
-             a[key] = x[key]
-              a["occurrence"] = 1
-              arr2.push(a);
-        }})
+             let onlyOneWinRobot = {"winner": "", "occurrence": 0}
+              onlyOneWinRobot["winner"] = robot["winner"]
+              onlyOneWinRobot["occurrence"] = 1
+              robotWins.push(onlyOneWinRobot);
+        }
+      })
+
         // sort array based on occurence (lowest to highest)
-        arr2.sort((a, b) => (a.occurrence > 	b.occurrence) ? 1 : -1)
-        const reversedArr2 = arr2.reverse();
-        setRobotData(reversedArr2);
+        robotWins.sort((a, b) => (a.occurrence > 	b.occurrence) ? 1 : -1)
+        robotWins = robotWins.reverse();
+        setRobotData(robotWins);
         setLoading(false);
       })
     },[]);
+
     // fetch api then reverse order (highest to lowest occurences)
     useEffect(() => {
       const robotPromises = robotData.slice(0).map(robot =>
@@ -56,10 +87,11 @@ export default function Leaderboard(){
       Promise.all(robotPromises).then(data =>
         {setRobotApi(data)})
   }, [robotData])
+
     return(
       <div id="leaderboard">
       <h1>PSRB Robot Hall of Fame</h1>
-        {(!loading)?
+        {(!loading && domLoaded)?
           <Swiper
           navigation={{
             nextEl: '.review-swiper-button-next',

@@ -4,7 +4,7 @@ import Leaderboard from "./Leaderboard";
 import RobotImage from "./RobotImage";
 import Confetti from 'react-confetti';
 
-export default function EndBattle(props){
+export default function EndBattle(props: any){
     const [endBattle, setEndBattle] = useState(true);
     return (
         (endBattle)?(
@@ -13,7 +13,7 @@ export default function EndBattle(props){
             <h2 className='endbattle-header'> The Winning Team is {props.winningTeam}, Congratulations!</h2>
             <div>
                 {/* Render Winning Team */}
-                    {props.robotData.slice(-5).map((value) => (
+                    {props.robotData.slice(-5).map((value: any) => (
                     <RobotImage robots={value}/>
                 ))}
             </div>

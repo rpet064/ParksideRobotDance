@@ -17,8 +17,26 @@ export default function Home() {
   // button toggle start competiton
   const [competition, setCompetiton] = useState(false);
   // store api data
-  const [robot, setRobot] = useState([]);
-  const [robot2, setRobot2] = useState([]);
+  const [robot, setRobot] = useState(
+    {
+      "id": Number,
+      "name": String,
+      "powermove": String,
+      "experience": Number,
+      "outOfOrder": Boolean,
+      "avatar": String
+  });
+  
+  const [robot2, setRobot2] = useState(
+    {
+      "id": Number,
+      "name": String,
+      "powermove": String,
+      "experience": Number,
+      "outOfOrder": Boolean,
+      "avatar": String
+  });
+
   const [leaderboard, setLeaderboard] = useState(false);
   const robotApi = axios.create({
     baseURL: "https://challenge.parkside-interactive.com/api/robots/" + Math.floor((Math.random() + 0.1) * 37)
@@ -64,19 +82,19 @@ export default function Home() {
               <div>
                   <Button title="About this app" id="address-card" type="button" >
                     <a href="https://challenge.parkside-interactive.com/docs/">
-                      <FontAwesomeIcon icon={["fas", "address-card"]} />
+                      <FontAwesomeIcon icon={faAddressCard} />
                     </a>
                   </Button>
                 </div>
                 <div>
                   <Button title="Home" type="button" onClick={() => navigateHome()}>
-                    <FontAwesomeIcon icon={["fas", "house-user"]} />
+                    <FontAwesomeIcon icon={faHouseUser} />
                   </Button>
                 </div>
                 {(!competition) && (
                 <div>
                   <Button title="Leaderboard" type="button" onClick={() => setLeaderboard(true)}>
-                    <FontAwesomeIcon icon={["fas", "trophy"]} />
+                    <FontAwesomeIcon icon={faTrophy} />
                   </Button>
                 </div>
                 )}
@@ -89,12 +107,12 @@ export default function Home() {
       (!competition) && (
          <Container className="homepage">
          <div id="homepage-left">
-         <h4>{robot.name}</h4>
+         <h4>{robot.name.toString()}</h4>
             <div>
               <img src={robot.avatar + '?size=160x160'} alt="Robot should be here"></img>
               <p>
               <span>Dance Move:</span>
-              <span>{robot.powermove}</span>
+              <span>{robot.powermove.toString()}</span>
               </p>
             </div>
           </div>
@@ -109,12 +127,12 @@ export default function Home() {
             </div>
         </div>
         <div id="homepage-right">
-            <h4>{robot2.name}</h4>
+            <h4>{robot2.name.toString()}</h4>
             <div>
               <img src={robot2.avatar + '?size=160x160'} alt="Robot should be here"></img>
               <p>
               <span>Dance Move:</span>
-              <span>{robot2.powermove}</span>
+              <span>{robot2.powermove.toString()}</span>
               </p>
             </div>
         </div>

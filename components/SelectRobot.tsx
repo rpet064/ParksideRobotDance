@@ -6,19 +6,26 @@ import RobotImage from "./RobotImage"
 import { SpinnerRoundOutlined } from 'spinners-react';
 
 
-export default function SelectRobot(props) {
+export default function SelectRobot(props: any) {
   // user confirm start of battle
   const [battle, beginBattle] = useState(false);
   //  catch robot data
-  const [robotData,setRobotData]=useState([])
+  const [robotData,setRobotData]=useState([{
+          "id": Number,
+          "name": String,
+          "powermove": String,
+          "experience": Number,
+          "outOfOrder": Boolean,
+          "avatar": String
+}])
   // restful api robot url
   const [buttonUnclickable, setbuttonUnclickable] = useState(true)
   //  controls carousel/skeleton state
   const [loading, setLoading] = useState(true)
-  var robotURL = [];
+  var robotURL: Array<any> = [];
   while(robotURL.length < 11) {
-      var r = Math.floor((Math.random() + 0.1) * 37);
-      if(robotURL.indexOf(r) === -1) robotURL.push(r);
+      var randomRobotId = Math.floor((Math.random() + 0.1) * 37);
+      if(robotURL.indexOf(randomRobotId) === -1) robotURL.push(randomRobotId);
   }
     useEffect(() => {
       const robotPromises = robotURL.map(randNo =>

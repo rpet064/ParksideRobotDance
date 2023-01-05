@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-export default function SendPost(props){
+export default function SendPost(props: any){
     const postURL = 'https://challenge.parkside-interactive.com/api/danceoffs'
     useMemo(() => {
         const data =  {
@@ -27,7 +27,6 @@ export default function SendPost(props){
     }, [props.robotOne, props.robotTwo, props.winningRobot])
     return (
         <div>
-        {console.log('Post Sent')}
         </div>
     )
 }

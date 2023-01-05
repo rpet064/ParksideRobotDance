@@ -1,9 +1,9 @@
+import "@fortawesome/fontawesome-svg-core/styles.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCrown } from "@fortawesome/free-solid-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { config, library } from "@fortawesome/fontawesome-svg-core"
 library.add(faStar, faCrown);
-
-
+config.autoAddCss = false
 
 export default function LeaderboardImage(props:any) {
     function StarGenerator(numStars:any, className_:any){

@@ -1,4 +1,4 @@
-export default function RobotImage(props) {
+export default function RobotImage(props: any) {
     return (
             <div key={props.robots._id} className="robot-image" >
             <div>
