@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import ChooseNames from "../components/ChooseNames"
 import Footer from "../components/Footer"
@@ -77,8 +77,8 @@ export default function Home() {
           <Button title="Home" type="button" onClick={() => navigateHome()}>
             PSRB
           </Button>
-            <Nav className="ms-auto" activeKey="/home">
-            <div className='btn-group'>
+            <Nav className={styles.msauto} activeKey="/home">
+            <div className={styles.btngroup}>
               <div>
                   <Button title="About this app" id="address-card" type="button" >
                     <a href="https://challenge.parkside-interactive.com/docs/">
@@ -105,11 +105,16 @@ export default function Home() {
       {/* middle screen components */}
       {leaderboard? <Leaderboard />: 
       (!competition) && (
-         <Container className="homepage">
+         <Container className={styles.homepage}>
          <div id="homepage-left">
          <h4>{robot.name.toString()}</h4>
             <div>
-              <img src={robot.avatar + '?size=160x160'} alt="Robot should be here"></img>
+            <Image 
+              src={robot2.avatar} 
+              alt="Robot should be here"
+              width={160}
+              height={160}
+              />
               <p>
               <span>Dance Move:</span>
               <span>{robot.powermove.toString()}</span>
@@ -129,7 +134,12 @@ export default function Home() {
         <div id="homepage-right">
             <h4>{robot2.name.toString()}</h4>
             <div>
-              <img src={robot2.avatar + '?size=160x160'} alt="Robot should be here"></img>
+              <Image 
+              src={robot2.avatar[0]} 
+              alt="Robot should be here"
+              width={160}
+              height={160}
+              />
               <p>
               <span>Dance Move:</span>
               <span>{robot2.powermove.toString()}</span>

@@ -2,6 +2,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCrown } from "@fortawesome/free-solid-svg-icons";
 import { config, library } from "@fortawesome/fontawesome-svg-core"
+import styles from '../styles/Home.module.css'
 library.add(faStar, faCrown);
 config.autoAddCss = false
 
@@ -17,7 +18,7 @@ export default function LeaderboardImage(props:any) {
                 <div>
                <img src={props.RobotApi.avatar + '?size=160x160'} alt='' />
                <p>{props.RobotApi.name}</p>
-               <p className='powermove-p'>Dance Move: {props.RobotApi.powermove}</p>
+               <p className={styles.powermovep}>Dance Move: {props.RobotApi.powermove}</p>
                {(() => {
                     switch (Math.ceil(props.ranking / 5)) {
                     case 0: return <FontAwesomeIcon icon={["fas", "crown"]} />
@@ -28,7 +29,7 @@ export default function LeaderboardImage(props:any) {
                     default: return StarGenerator(1, 'one-stars');
                     }
                 })()}
-               <p className='wins-p'>Wins:{props.wins[props.ranking]['occurrence']}</p>
+               <p className={styles.winsp}>Wins:{props.wins[props.ranking]['occurrence']}</p>
             </div>
          </div>
       )

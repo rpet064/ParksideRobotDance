@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { SpinnerRoundOutlined } from 'spinners-react';
 import { Swiper, SwiperSlide } from "swiper/react";
+import styles from '../styles/Home.module.css'
 import "swiper/css";
 import "swiper/css/pagination";
 import LeaderboardImage from './LeaderboardImage';
@@ -99,7 +100,7 @@ export default function Leaderboard(){
           }}
           slidesPerView={5}
           spaceBetween={10}
-          className="mySwiper">
+          className={styles.mySwiper}>
           {robotAPI.map((value, index) => (
             <SwiperSlide><LeaderboardImage RobotApi={value} key={index} ranking={index} wins={robotData}/></SwiperSlide>
           ))}

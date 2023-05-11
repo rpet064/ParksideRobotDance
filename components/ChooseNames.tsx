@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import SelectRobot from "./SelectRobot";
+import styles from '../styles/Home.module.css'
 
 export default function ChooseNames() {
 
@@ -21,7 +22,7 @@ export default function ChooseNames() {
   };
 
   return !teams ? (
-    <div className='team-names-form'>
+    <div className={styles.teamnamesform}>
       <h1> Who's Competiting Today? </h1>
       <form
         onSubmit={(event) => {
@@ -52,7 +53,7 @@ export default function ChooseNames() {
           />
         </div>
         <Button 
-        className="form-button" 
+        className={styles.formbutton} 
         type="submit"
         >
           Submit

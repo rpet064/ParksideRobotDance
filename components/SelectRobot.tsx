@@ -4,6 +4,7 @@ import RobotBattle from "./RobotBattle";
 import {Container} from "react-bootstrap";
 import RobotImage from "./RobotImage"
 import { SpinnerRoundOutlined } from 'spinners-react';
+import styles from '../styles/Home.module.css'
 
 
 export default function SelectRobot(props: any) {
@@ -47,7 +48,7 @@ export default function SelectRobot(props: any) {
 
 
   return !battle ? (
-    <Container className="select-robots">
+    <Container className={styles.selectrobots}>
       <div>
        <h1> Here are your competitors! </h1>
       </div>
@@ -69,7 +70,7 @@ export default function SelectRobot(props: any) {
       ))}
       </div>
       <Button
-        className="btn-lg"
+        className={styles.btnlg}
         id="select-robots-button"
         type="button"
         onClick={() => beginBattle(true)}
